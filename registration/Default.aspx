@@ -32,8 +32,7 @@
         <br />
 
         <label for="Address2"><b>Address2</b></label>
-        <asp:TextBox ID="txtAddress2" runat="server" class="form-control"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="rfvAddress2" runat="server" ValidationGroup="registration" ControlToValidate="txtAddress2" class="alert alert-danger" Text="Address2 Required!"></asp:RequiredFieldValidator>
+        <asp:TextBox ID="txtAddress2" runat="server" class="form-control"></asp:TextBox>        
         <br />
 
         <label for="City"><b>City</b></label>
