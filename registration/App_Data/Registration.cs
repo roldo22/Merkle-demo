@@ -25,6 +25,7 @@ public class Registration
 
     public void AddRegistration()
     {
+        
         using (db d = new db("spAddUser"))
         {
             d.addParm("@FirstName", FirstName);
@@ -36,7 +37,7 @@ public class Registration
             d.addParm("@Zip", Zip);
             d.addParm("@Country", Country);            
             d.Exec();
-        }
+        }        
     }
 
     public static DataTable Get()

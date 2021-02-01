@@ -16,19 +16,30 @@ namespace registration
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            Registration reg = new Registration();
-            reg.FirstName = txtFirstName.Text;
-            reg.LastName = txtLastName.Text;
-            reg.Address1 = txtAddress1.Text;
-            reg.Address2 = txtAddress2.Text;
-            reg.City = txtCity.Text;
-            reg.State = DropDownListState.Text;
-            reg.Zip = txtZip.Text;
-            reg.Country = txtCountry.Text;
-            reg.AddRegistration();
-            //add check            
-            Response.Redirect("~/Confirmation.aspx");
+            //added for server side check
+            if (txtFirstName.Text.Length > 0)
+            {
+
+                Registration reg = new Registration();
+                reg.FirstName = txtFirstName.Text;
+                reg.LastName = txtLastName.Text;
+                reg.Address1 = txtAddress1.Text;
+                reg.Address2 = txtAddress2.Text;
+                reg.City = txtCity.Text;
+                reg.State = DropDownListState.Text;
+                reg.Zip = txtZip.Text;
+                reg.Country = txtCountry.Text;
+                reg.AddRegistration();
+                Response.Redirect("~/Confirmation.aspx");
+            }
+            else
+            {
+                lblNameError.Visible = true;
+            }
+            
 
         }
+
+        
     }
 }

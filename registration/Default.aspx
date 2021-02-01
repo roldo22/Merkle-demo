@@ -9,15 +9,18 @@
     margin-bottom: 20px;
     border: 1px solid transparent;
     border-radius: 4px;
+
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;    
 }
 
     </style>
-
-
+    
     <div class="form-group">
         <label for="First Name"><b>First Name</b></label>
-        <asp:TextBox ID="txtFirstName" runat="server" class="form-control"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" ControlToValidate="txtFirstName" ValidationGroup="registration" class="alert alert-danger" Text="First Name Required!"></asp:RequiredFieldValidator>
+        <asp:TextBox ID="txtFirstName" runat="server" class="form-control"></asp:TextBox>        
+        <asp:Label  ID="lblNameError" runat="server" CssClass="alert alertDanger" Text="First Name Required!" Visible="false"></asp:Label>
         <br />
         <label for="Last Name"><b>LastName</b></label>
         <asp:TextBox ID="txtLastName" runat="server" class="form-control"></asp:TextBox>
@@ -102,8 +105,7 @@
         <br />
 
         <label for="Country"><b>Country</b></label>
-        <asp:TextBox ID="txtCountry" runat="server" class="form-control" Text="United States" ReadOnly="true"></asp:TextBox>
-        <%--<asp:RequiredFieldValidator ID="rfvCountry" runat="server" ValidationGroup="registration" ControlToValidate="txtCountry" class="alert alert-danger" Text="Required!" ></asp:RequiredFieldValidator>--%>
+        <asp:TextBox ID="txtCountry" runat="server" class="form-control" Text="United States" ReadOnly="true"></asp:TextBox>        
         <br />
         <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" CssClass="btn btn-primary" ValidationGroup="registration" />
     </div>
